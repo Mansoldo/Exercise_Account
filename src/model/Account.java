@@ -53,6 +53,18 @@ public class Account {
         this.withdrawLimit = withdrawLimit;
     }
     
+    public void deposit(double deposit){
+        
+        if(deposit < 0){
+            throw new IllegalArgumentException("Negative value isn't allow it to deposit");
+        }
+        
+        if(deposit == 0){
+            throw new IllegalArgumentException("It must be inserted a positive value");
+        }
+        this.balance += deposit;
+    }
+    
     public void withdraw(double withdraw){
         
         if(withdraw > withdrawLimit && withdraw > balance){                    
